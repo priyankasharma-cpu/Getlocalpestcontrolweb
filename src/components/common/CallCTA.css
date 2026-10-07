@@ -1,0 +1,42 @@
+.button.call {
+  background: var(--accent);
+  color: var(--primary-dark);
+  border: 1px solid var(--accent);
+  box-shadow: 0 3px 8px #0c312512;
+  opacity: 1;
+  gap: 10px;
+}
+.button.call:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  box-shadow: 0 7px 18px #0c312522;
+  transform: translateY(-2px);
+}
+.call svg {
+  transition: transform 0.22s ease;
+}
+.call:hover svg {
+  transform: rotate(-10deg);
+}
+.call[aria-disabled="true"] {
+  cursor: default;
+}
+.call.compact {
+  width: 44px;
+  min-height: 44px;
+  padding: 10px;
+}
+.call.compact .call-label {
+  display: none;
+}
+.call-status {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 12px 0 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .button.call:hover,
+  .call:hover svg {
+    transform: none;
+  }
+}

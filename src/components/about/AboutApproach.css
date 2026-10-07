@@ -1,0 +1,267 @@
+.about-approach {
+    position: relative;
+
+    padding: 105px 0;
+
+    color: white;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 90% 20%,
+            rgba(111, 186, 66, 0.13),
+            transparent 30%),
+        linear-gradient(135deg,
+            #062d22,
+            #0b3d2d);
+}
+
+.about-approach::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.07;
+
+    background-image:
+        radial-gradient(#ffffff 1px,
+            transparent 1px);
+
+    background-size: 25px 25px;
+}
+
+.about-approach .container {
+    position: relative;
+    z-index: 2;
+}
+
+.approach-header {
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.7fr;
+
+    align-items: end;
+
+    gap: 70px;
+
+    margin-bottom: 60px;
+}
+
+.approach-kicker {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: #9bd577;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+.approach-header h2 {
+    margin: 0;
+
+    font-size: clamp(42px, 4vw, 62px);
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+}
+
+.approach-header h2 span {
+    color: var(--accent);
+}
+
+.approach-header>p {
+    margin: 0 0 5px;
+
+    max-width: 460px;
+
+    color: #bfd1c7;
+
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+/* CARDS */
+
+.approach-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+.approach-grid article {
+    position: relative;
+
+    min-height: 310px;
+
+    padding: 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.09),
+            rgba(255, 255, 255, 0.035));
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.approach-grid article:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(140, 210, 96, 0.35);
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.13),
+            rgba(255, 255, 255, 0.05));
+}
+
+.approach-number {
+    position: absolute;
+
+    top: 24px;
+    right: 25px;
+
+    color: rgba(255, 255, 255, 0.18);
+
+    font-size: 40px;
+    font-weight: 800;
+
+    letter-spacing: -0.05em;
+}
+
+.approach-icon {
+    width: 68px;
+    height: 68px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 45px;
+
+    border-radius: 17px;
+
+    color: #153c2a;
+
+    background:
+        linear-gradient(145deg,
+            #a4db7e,
+            #69b641);
+
+    box-shadow:
+        0 13px 30px rgba(77, 154, 55, 0.2);
+
+    transition: transform 0.3s ease;
+}
+
+.approach-grid article:hover .approach-icon {
+    transform: rotate(-5deg) scale(1.06);
+}
+
+.approach-grid h3 {
+    margin: 0 0 11px;
+
+    color: white;
+
+    font-size: 21px;
+}
+
+.approach-grid p {
+    margin: 0;
+
+    max-width: 330px;
+
+    color: #b9cbc1;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.approach-arrow {
+    position: absolute;
+
+    z-index: 5;
+
+    right: -24px;
+    top: 50%;
+
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    color: #183e2b;
+
+    background: var(--accent);
+
+    border: 5px solid #093426;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .approach-header {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .approach-grid article {
+        min-height: 260px;
+    }
+
+    .approach-arrow {
+        display: none;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .about-approach {
+        padding: 75px 0;
+    }
+
+    .approach-header {
+        margin-bottom: 40px;
+    }
+
+    .approach-header h2 {
+        font-size: 40px;
+    }
+
+    .approach-grid article {
+        min-height: 0;
+
+        padding: 24px;
+    }
+
+    .approach-icon {
+        width: 60px;
+        height: 60px;
+
+        margin-bottom: 35px;
+    }
+}

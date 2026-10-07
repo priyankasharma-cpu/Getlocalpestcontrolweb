@@ -1,0 +1,143 @@
+@media (max-width: 1100px) {
+  .container {
+    width: calc(100% - 64px);
+  }
+  .section {
+    padding: 82px 0;
+  }
+  .split {
+    gap: 44px;
+  }
+  .section-heading {
+    gap: 30px;
+  }
+  .footer-grid {
+    gap: 35px;
+  }
+}
+@media (max-width: 800px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 42px;
+  }
+  .section-heading {
+    display: block;
+    margin-bottom: 35px;
+  }
+  .section-heading p {
+    margin-top: 22px;
+    max-width: 520px;
+  }
+  .page-hero .split {
+    gap: 35px;
+  }
+  .page-hero {
+    padding: 28px 0 60px;
+  }
+  .footer-grid {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 42px;
+  }
+  .contact-page .split {
+    gap: 40px;
+  }
+}
+@media (max-width: 700px) {
+  .container {
+    width: calc(100% - 40px);
+  }
+  .section {
+    padding: 64px 0;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 24px;
+  }
+  .footer-brand {
+    grid-column: 1/-1;
+  }
+  .footer-bottom {
+    display: block;
+  }
+  .footer-bottom span {
+    display: block;
+    margin-top: 10px;
+  }
+  footer {
+    padding-bottom: 105px;
+  }
+  .mobile-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 25;
+    background: white;
+    box-shadow: 0 -3px 18px #123c2d1a;
+    border-top: 1px solid var(--border);
+    padding: 10px 16px;
+    gap: 12px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+  .mobile-cta > .button {
+    width: 50%;
+    font-size: 15px;
+    min-height: 48px;
+    padding: 12px;
+  }
+  .quote-modal {
+    padding: 34px 24px;
+  }
+  .quote-modal h2 {
+    font-size: 32px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .page-hero h1 {
+    font-size: clamp(38px, 8vw, 52px);
+  }
+  .page-hero-image {
+    height: 300px !important;
+  }
+  .contact-page h1 {
+    font-size: 44px;
+  }
+  .contact-form-card {
+    padding: 30px !important;
+  }
+  .info-cards article {
+    padding: 23px;
+  }
+  .legal {
+    padding-bottom: 65px;
+  }
+}
+@media (max-width: 360px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+  .contact-page h1 {
+    font-size: 38px;
+  }
+  .contact-form-card {
+    padding: 23px !important;
+  }
+  .quote-modal {
+    padding: 32px 20px;
+  }
+  .quote-modal h2 {
+    font-size: 29px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

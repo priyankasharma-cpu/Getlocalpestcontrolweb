@@ -1,0 +1,279 @@
+.identification-section {
+    position: relative;
+    padding: 110px 0;
+    overflow: hidden;
+    background: #fff;
+}
+
+.identification-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+    align-items: center;
+    gap: clamp(55px, 7vw, 105px);
+}
+
+/* IMAGE */
+
+.identification-visual {
+    position: relative;
+    padding: 0 25px 30px 0;
+}
+
+.identification-image {
+    position: relative;
+    height: 570px;
+    overflow: hidden;
+    border-radius: 28px 28px 90px 28px;
+    box-shadow: 0 30px 70px rgba(17, 62, 39, 0.14);
+}
+
+.identification-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.identification-image:hover img {
+    transform: scale(1.045);
+}
+
+.identification-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(180deg,
+            transparent 50%,
+            rgba(5, 43, 30, 0.86));
+}
+
+.identification-image-content {
+    position: absolute;
+    z-index: 3;
+    left: 24px;
+    right: 24px;
+    bottom: 23px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.identification-image-content>span {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+    color: #153c2a;
+    background: var(--accent);
+}
+
+.identification-image-content small {
+    display: block;
+    margin-bottom: 4px;
+
+    color: #b6cdbf;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+.identification-image-content strong {
+    display: block;
+    max-width: 340px;
+
+    color: white;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* FLOATING BADGE */
+
+.identification-badge {
+    position: absolute;
+    right: -20px;
+    top: 65px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 17px 12px 11px;
+
+    border: 1px solid #e1e9dd;
+    border-radius: 15px;
+
+    color: #163d2c;
+    background: rgba(255, 255, 255, 0.97);
+
+    box-shadow: 0 20px 45px rgba(22, 64, 43, 0.14);
+}
+
+.identification-badge>svg {
+    width: 49px;
+    height: 49px;
+    padding: 11px;
+
+    border-radius: 12px;
+
+    color: white;
+    background: linear-gradient(135deg, #226b3c, #62a942);
+}
+
+.identification-badge small {
+    display: block;
+    margin-bottom: 3px;
+
+    color: #829087;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+}
+
+.identification-badge strong {
+    font-size: 12px;
+}
+
+/* CONTENT */
+
+.identification-eyebrow {
+    display: block;
+    margin-bottom: 18px;
+
+    color: #558a42;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+}
+
+.identification-content h2 {
+    margin: 0;
+
+    color: #103b2c;
+    font-size: clamp(42px, 4vw, 60px);
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+}
+
+.identification-content h2 em {
+    color: #61a83f;
+    font-style: normal;
+}
+
+.identification-lead {
+    max-width: 540px;
+    margin: 25px 0 30px;
+
+    color: #697970;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+/* POINTS */
+
+.identification-points {
+    display: grid;
+    gap: 9px;
+}
+
+.identification-points article {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 14px;
+
+    border: 1px solid transparent;
+    border-radius: 15px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.identification-points article:hover {
+    transform: translateX(6px);
+    border-color: #dce9d5;
+    background: #f9fcf7;
+}
+
+.identification-point-icon {
+    width: 51px;
+    height: 51px;
+    flex: 0 0 51px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+
+    color: #43803e;
+    background: #edf6e7;
+}
+
+.identification-points h3 {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin: 2px 0 5px;
+
+    color: #173d2e;
+    font-size: 15px;
+}
+
+.identification-points h3 svg {
+    color: #65a945;
+}
+
+.identification-points p {
+    margin: 0;
+
+    color: #758179;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+@media (max-width: 850px) {
+    .identification-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .identification-visual {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 600px) {
+    .identification-section {
+        padding: 75px 0;
+    }
+
+    .identification-visual {
+        padding: 0;
+    }
+
+    .identification-image {
+        height: 440px;
+        border-radius: 22px 22px 60px 22px;
+    }
+
+    .identification-badge {
+        right: 12px;
+        top: 15px;
+        transform: scale(0.88);
+        transform-origin: top right;
+    }
+
+    .identification-content h2 {
+        font-size: 40px;
+    }
+}

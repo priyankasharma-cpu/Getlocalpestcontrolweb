@@ -1,0 +1,676 @@
+/* ========================================
+   HOW IT WORKS
+======================================== */
+
+.process {
+  position: relative;
+  overflow: hidden;
+
+  padding: 105px 0 115px;
+
+  background:
+    linear-gradient(180deg,
+      #ffffff 0%,
+      #fbfdf9 48%,
+      #f5f9f1 100%);
+}
+
+/* ========================================
+   DECORATIVE BACKGROUND
+======================================== */
+
+.process::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.32;
+
+  background-image:
+    radial-gradient(circle,
+      rgba(46, 111, 66, 0.13) 1px,
+      transparent 1px);
+
+  background-size: 27px 27px;
+
+  mask-image:
+    linear-gradient(90deg,
+      #000,
+      transparent 22%,
+      transparent 78%,
+      #000);
+
+  pointer-events: none;
+}
+
+.process-glow {
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.process-glow-left {
+  left: -230px;
+  top: -150px;
+
+  background: rgba(112, 189, 64, 0.13);
+}
+
+.process-glow-right {
+  right: -220px;
+  bottom: -180px;
+
+  background: rgba(29, 101, 68, 0.1);
+}
+
+.process-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========================================
+   HEADING
+======================================== */
+
+.process-heading {
+  max-width: 850px;
+
+  margin: 0 auto 65px;
+
+  text-align: center;
+}
+
+.process-eyebrow {
+  width: fit-content;
+
+  margin: 0 auto 21px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 7px 15px 7px 8px;
+
+  border-radius: 999px;
+
+  border: 1px solid #d9e8cf;
+
+  background: rgba(244, 249, 239, 0.92);
+
+  color: #315b3d;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+
+  box-shadow:
+    0 8px 25px rgba(27, 74, 45, 0.04);
+}
+
+.process-eyebrow-icon {
+  width: 29px;
+  height: 29px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(135deg,
+      #2d773f,
+      #71b844);
+}
+
+.process-heading h2 {
+  margin: 0;
+
+  color: #092f25;
+
+  font-size: clamp(40px, 4vw, 62px);
+  font-weight: 750;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.045em;
+}
+
+.process-heading h2 span {
+  position: relative;
+
+  color: #54a833;
+}
+
+.process-heading h2 span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 8%;
+  right: 8%;
+  bottom: -10px;
+
+  height: 3px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(90deg,
+      transparent,
+      #88c75d,
+      transparent);
+}
+
+.process-intro {
+  max-width: 620px;
+
+  margin: 29px auto 0;
+
+  color: #61716a;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   GRID
+======================================== */
+
+.process-grid {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+/* ========================================
+   CARD
+======================================== */
+
+.process-card {
+  position: relative;
+
+  min-height: 395px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 29px 25px 23px;
+
+  border-radius: 22px;
+
+  border: 1px solid #e1e9dc;
+
+  background:
+    linear-gradient(155deg,
+      #ffffff 0%,
+      #ffffff 68%,
+      #f8fbf5 100%);
+
+  box-shadow:
+    0 20px 55px rgba(23, 63, 41, 0.07),
+    0 4px 15px rgba(23, 63, 41, 0.025);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.process-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(135deg,
+      rgba(114, 190, 67, 0.07),
+      transparent 38%);
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+
+  pointer-events: none;
+}
+
+.process-card:hover {
+  transform: translateY(-9px);
+
+  border-color: #c9ddba;
+
+  box-shadow:
+    0 28px 65px rgba(23, 63, 41, 0.12),
+    0 8px 20px rgba(23, 63, 41, 0.05);
+}
+
+.process-card:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   NUMBER
+======================================== */
+
+.process-number {
+  position: absolute;
+
+  top: 19px;
+  left: 20px;
+
+  z-index: 4;
+
+  width: 51px;
+  height: 51px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #174e31;
+
+  background:
+    linear-gradient(145deg,
+      #f0f8e9,
+      #dcefcf);
+
+  border: 4px solid #ffffff;
+
+  box-shadow:
+    0 7px 20px rgba(48, 97, 57, 0.12);
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* ========================================
+   ICON
+======================================== */
+
+.process-icon-area {
+  position: relative;
+
+  height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 10px 0 17px;
+}
+
+.process-icon-glow {
+  position: absolute;
+
+  width: 115px;
+  height: 115px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+      rgba(110, 188, 63, 0.19),
+      rgba(110, 188, 63, 0));
+
+  filter: blur(4px);
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.process-icon-ring {
+  position: relative;
+
+  z-index: 2;
+
+  width: 94px;
+  height: 94px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 26px;
+
+  color: #25623c;
+
+  background:
+    linear-gradient(145deg,
+      #f5faef,
+      #e6f3db);
+
+  border: 1px solid #d3e7c5;
+
+  box-shadow:
+    0 16px 35px rgba(54, 106, 64, 0.11),
+    inset 0 1px 1px #ffffff;
+
+  transform: rotate(-4deg);
+
+  transition:
+    transform 0.4s cubic-bezier(0.22,
+      1,
+      0.36,
+      1),
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.process-icon-ring svg {
+  margin: 0;
+}
+
+.process-card:hover .process-icon-ring {
+  transform:
+    translateY(-5px) rotate(0deg) scale(1.07);
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(135deg,
+      #286e40,
+      #58a63b);
+}
+
+.process-card:hover .process-icon-glow {
+  transform: scale(1.2);
+}
+
+/* mini check */
+
+.mini-check {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 96px;
+  left: calc(50% + 25px);
+
+  width: 26px;
+  height: 26px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background: #66b23e;
+
+  border: 3px solid #ffffff;
+
+  box-shadow:
+    0 5px 14px rgba(56, 119, 61, 0.2);
+}
+
+/* ========================================
+   CARD CONTENT
+======================================== */
+
+.process-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.process-step-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #76a75b;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+.process-card h3 {
+  margin: 0 0 12px;
+
+  max-width: 245px;
+
+  color: #123c2d;
+
+  font-size: 20px;
+  line-height: 1.28;
+
+  letter-spacing: -0.025em;
+}
+
+.process-card p {
+  margin: 0;
+
+  color: #6a7771;
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ========================================
+   PROGRESS BAR
+======================================== */
+
+.process-progress {
+  width: 100%;
+  height: 4px;
+
+  margin-top: auto;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: #e8eee5;
+}
+
+.process-progress span {
+  display: block;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(90deg,
+      #245f39,
+      #74bb48);
+
+  transition: width 0.8s ease;
+}
+
+/* ========================================
+   CONNECTORS
+======================================== */
+
+.process-connector {
+  position: absolute;
+
+  z-index: 8;
+
+  top: 67px;
+  right: -28px;
+
+  width: 38px;
+
+  pointer-events: none;
+}
+
+.connector-line {
+  position: absolute;
+
+  left: -2px;
+  top: 16px;
+
+  width: 35px;
+
+  border-top:
+    1px dashed rgba(66, 116, 72, 0.45);
+}
+
+.connector-arrow {
+  position: absolute;
+
+  right: 0;
+  top: 0;
+
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #296a3e;
+
+  background: #ffffff;
+
+  border: 1px solid #dce9d5;
+
+  box-shadow:
+    0 5px 15px rgba(26, 76, 44, 0.1);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1050px) {
+  .process-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+  }
+
+  .process-card {
+    min-height: 365px;
+  }
+
+  .process-connector {
+    display: none;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+  .process {
+    padding: 75px 0 80px;
+  }
+
+  .process-heading {
+    margin-bottom: 42px;
+
+    text-align: left;
+  }
+
+  .process-eyebrow {
+    margin-left: 0;
+    margin-right: 0;
+
+    font-size: 10px;
+  }
+
+  .process-heading h2 {
+    font-size: clamp(38px, 10vw, 48px);
+  }
+
+  .process-heading h2 br {
+    display: none;
+  }
+
+  .process-intro {
+    margin-left: 0;
+
+    font-size: 15px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .process-card {
+    min-height: auto;
+
+    padding: 24px 21px 21px;
+  }
+
+  .process-icon-area {
+    height: 130px;
+
+    margin-top: 13px;
+  }
+
+  .process-icon-ring {
+    width: 84px;
+    height: 84px;
+
+    border-radius: 23px;
+  }
+
+  .process-icon-ring svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mini-check {
+    top: 83px;
+  }
+
+  .process-card h3 {
+    max-width: none;
+
+    font-size: 21px;
+  }
+
+  .process-card p {
+    font-size: 15px;
+  }
+
+  .process-progress {
+    margin-top: 24px;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .process *,
+  .process *::before,
+  .process *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

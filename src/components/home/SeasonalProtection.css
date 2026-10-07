@@ -1,0 +1,70 @@
+.seasonal {
+  background: var(--background-soft);
+}
+.season-tabs {
+  display: flex;
+  gap: 11px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+.season-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid #c8d8bc;
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+}
+.season-tabs button:hover {
+  box-shadow: 0 4px 12px #123c2d15;
+}
+.season-tabs button[aria-selected="true"] {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+.season-panel {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 48px;
+  min-height: 400px;
+  box-shadow: var(--shadow-card);
+}
+.season-panel > svg {
+  color: #6a9639;
+  margin-bottom: 25px;
+}
+.season-panel h3 {
+  font-size: 32px;
+  max-width: 450px;
+}
+.season-panel small {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+@media (max-width: 700px) {
+  .season-panel {
+    padding: 30px;
+    min-height: 0;
+  }
+  .season-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .season-tabs button {
+    padding: 14px;
+    justify-content: center;
+  }
+  .season-panel h3 {
+    font-size: 29px;
+  }
+}

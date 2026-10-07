@@ -1,0 +1,84 @@
+.pc-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(52px, 6vw, 88px) 0 84px;
+  background: linear-gradient(115deg, #f7f9f2 0%, #edf4e8 65%, #e1edd8 100%);
+  border-bottom: 1px solid var(--border);
+}
+.pc-hero-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .35;
+  background-image: radial-gradient(#9eb28d 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(90deg, transparent 40%, black);
+}
+.pc-hero-glow { position: absolute; z-index: -1; pointer-events: none; border-radius: 50%; filter: blur(70px); }
+.pc-hero-glow-one { width: 350px; height: 350px; background: #d5e9bb; right: -100px; top: -160px; }
+.pc-hero-glow-two { width: 240px; height: 240px; background: #ffffff; left: -80px; bottom: -80px; }
+.pc-hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: center; gap: clamp(36px, 5vw, 80px); }
+.pc-hero-content, .pc-hero-visual { min-width: 0; }
+.pc-hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; font-size: 12px; font-weight: 700; letter-spacing: .13em; color: #496d35; }
+.pc-hero-eyebrow > span { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid #c9dcb8; border-radius: 50%; background: #fff9; }
+.pc-hero h1 { font-size: clamp(36px, 3.7vw, 58px); line-height: 1.12; letter-spacing: -.045em; max-width: 680px; margin-bottom: 24px; text-wrap: balance; overflow-wrap: anywhere; }
+.pc-hero h1 em { color: #537e37; font-style: normal; }
+.pc-hero-lead { font-size: 17px; line-height: 1.8; max-width: 560px; margin-bottom: 30px; }
+.pc-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.pc-hero-actions .button { min-height: 56px; border-radius: 10px; }
+.pc-primary-btn > span { display: grid; place-items: center; }
+.pc-hero-actions .call { background: #fff; border-color: #c6d5bc; }
+.pc-trust-row { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 26px; color: #51644b; font-size: 12px; }
+.pc-trust-row > div { display: flex; align-items: center; gap: 7px; }
+.pc-trust-row span { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; color: #3e6d2d; background: #dcebcf; }
+.pc-hero-visual { position: relative; padding: 12px 0 22px 12px; }
+.pc-image-card { position: relative; overflow: hidden; border-radius: 26px; border: 6px solid #fff; box-shadow: 0 24px 60px #123c2d20; aspect-ratio: 1.1; background: #dce5d5; }
+.pc-image-card > img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.pc-image-gradient { position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, #082d21e8); pointer-events: none; }
+.pc-image-info { position: absolute; bottom: 26px; left: 24px; right: 24px; display: flex; align-items: center; gap: 14px; color: #fff; }
+.pc-image-info > span { width: 46px; height: 46px; display: grid; place-items: center; flex-shrink: 0; border-radius: 14px; background: #ffffff20; border: 1px solid #ffffff40; }
+.pc-image-info small { display: block; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #d7eabd; margin-bottom: 5px; }
+.pc-image-info strong { display: block; font-size: 16px; line-height: 1.5; font-weight: 600; }
+.pc-floating-card { position: absolute; top: 38px; left: -12px; display: flex; align-items: center; gap: 12px; padding: 14px 18px; max-width: calc(100% - 20px); background: #fff; border: 1px solid #e0e8d8; border-radius: 15px; box-shadow: 0 12px 30px #123c2d18; }
+.pc-floating-icon { display: grid; place-items: center; flex-shrink: 0; width: 42px; height: 42px; border-radius: 12px; background: #edf4e5; color: #537e37; }
+.pc-floating-card small, .pc-shield-card small { display: block; font-size: 9px; letter-spacing: .12em; line-height: 1.6; color: #73816b; margin-bottom: 3px; }
+.pc-floating-card strong, .pc-shield-card strong { display: block; font-size: 13px; line-height: 1.4; }
+.pc-shield-card { position: absolute; bottom: 0; right: 24px; display: flex; align-items: center; gap: 12px; padding: 13px 22px; border-radius: 14px; background: var(--primary); color: #fff; box-shadow: 0 12px 28px #123c2d26; }
+.pc-shield-card > svg { color: var(--accent); }
+.pc-shield-card small { color: #c5dab7; }
+.pc-dot-pattern { position: absolute; z-index: -1; width: 120px; height: 120px; bottom: -5px; left: -20px; background-image: radial-gradient(#91b674 2px, transparent 2px); background-size: 14px 14px; }
+.pc-watermark { position: absolute; z-index: -1; bottom: -22px; left: 3%; font-family: Manrope, sans-serif; font-size: clamp(60px, 9vw, 140px); font-weight: 800; letter-spacing: -.04em; line-height: 1; color: #123c2d04; pointer-events: none; white-space: nowrap; }
+@media (max-width: 1000px) {
+  .pc-hero-grid { gap: 32px; }
+  .pc-hero h1 { font-size: clamp(34px, 4.2vw, 44px); }
+  .pc-hero-lead { font-size: 16px; }
+  .pc-image-card { aspect-ratio: .9; }
+  .pc-image-info { left: 18px; right: 18px; bottom: 22px; }
+  .pc-image-info strong { font-size: 14px; }
+}
+@media (max-width: 800px) {
+  .pc-hero { padding: 48px 0 60px; }
+  .pc-hero-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .pc-hero h1 { font-size: clamp(36px, 6vw, 48px); max-width: 650px; }
+  .pc-hero-visual { width: 100%; max-width: 620px; justify-self: center; padding-left: 0; }
+  .pc-image-card { aspect-ratio: 1.35; }
+  .pc-floating-card { left: 14px; top: 28px; }
+  .pc-trust-row { gap: 10px 16px; }
+}
+@media (max-width: 480px) {
+  .pc-hero { padding: 34px 0 48px; }
+  .pc-hero-eyebrow { font-size: 10px; letter-spacing: .1em; margin-bottom: 20px; }
+  .pc-hero h1 { font-size: 35px; }
+  .pc-hero-lead { line-height: 1.7; margin-bottom: 24px; }
+  .pc-hero-actions { align-items: stretch; gap: 10px; }
+  .pc-hero-actions .button { padding: 13px 16px; font-size: 14px; flex: 1 1 auto; }
+  .pc-image-card { aspect-ratio: 1; border-width: 4px; border-radius: 20px; }
+  .pc-image-info { left: 16px; right: 16px; gap: 10px; }
+  .pc-image-info > span { width: 36px; height: 36px; border-radius: 10px; }
+  .pc-image-info strong { font-size: 13px; }
+  .pc-floating-card { padding: 10px 12px; gap: 9px; }
+  .pc-floating-icon { width: 34px; height: 34px; }
+  .pc-floating-card strong { font-size: 12px; }
+  .pc-shield-card { right: 16px; padding: 10px 16px; }
+}

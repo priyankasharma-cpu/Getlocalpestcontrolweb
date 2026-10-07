@@ -1,0 +1,923 @@
+/* =====================================================
+   ABOUT HERO
+===================================================== */
+
+.about-hero {
+    position: relative;
+    isolation: isolate;
+
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    color: #fff;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(108, 190, 61, 0.12),
+            transparent 28%),
+        linear-gradient(125deg,
+            #052b20 0%,
+            #07372a 48%,
+            #0a4431 100%);
+}
+
+/* =====================================================
+   BACKGROUND DETAILS
+===================================================== */
+
+.about-hero-grid-pattern {
+    position: absolute;
+    inset: 0;
+
+    z-index: -3;
+
+    opacity: 0.07;
+
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.2) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.2) 1px,
+            transparent 1px);
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(90deg,
+            #000,
+            transparent 70%);
+}
+
+.about-hero-glow {
+    position: absolute;
+
+    z-index: -2;
+
+    width: 650px;
+    height: 650px;
+
+    right: -180px;
+    top: -240px;
+
+    border-radius: 50%;
+
+    background: rgba(121, 201, 72, 0.12);
+
+    filter: blur(110px);
+}
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+
+.about-hero-container {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.93fr) minmax(0, 1.07fr);
+
+    align-items: center;
+
+    gap: clamp(50px, 6vw, 95px);
+
+    padding-top: 85px;
+    padding-bottom: 85px;
+}
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.about-hero-content {
+    position: relative;
+    z-index: 4;
+
+    max-width: 650px;
+}
+
+/* eyebrow */
+
+.about-hero-eyebrow {
+    width: fit-content;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 23px;
+
+    padding: 7px 15px 7px 7px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    backdrop-filter: blur(10px);
+
+    color: #d9eacf;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+}
+
+.about-hero-eyebrow>span {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #163d2b;
+
+    background: var(--accent);
+}
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.about-hero h1 {
+    margin: 0;
+
+    max-width: 640px;
+
+    color: #fff;
+
+    font-size: clamp(54px, 5.1vw, 78px);
+
+    font-weight: 750;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+}
+
+.about-hero h1 em {
+    position: relative;
+
+    display: inline-block;
+
+    font-style: normal;
+
+    color: var(--accent);
+}
+
+.about-hero h1 em::after {
+    content: "";
+
+    position: absolute;
+
+    left: 3px;
+    right: 0;
+    bottom: -7px;
+
+    height: 3px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(90deg,
+            var(--accent),
+            transparent);
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.about-hero-description {
+    max-width: 575px;
+
+    margin: 30px 0 31px;
+
+    color: #ccddd3;
+
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.about-hero-actions {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.about-hero-actions .button {
+    min-height: 58px;
+
+    border-radius: 10px;
+}
+
+.about-hero-primary {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding-left: 23px !important;
+    padding-right: 8px !important;
+
+    box-shadow:
+        0 14px 35px rgba(92, 177, 55, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.about-hero-primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 20px 42px rgba(92, 177, 55, 0.34);
+}
+
+.about-hero-arrow {
+    width: 41px;
+    height: 41px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 8px;
+
+    background: rgba(0, 0, 0, 0.14);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.about-hero-primary:hover .about-hero-arrow {
+    transform: rotate(45deg);
+
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Call CTA */
+
+.about-hero .call {
+    min-height: 58px;
+
+    color: #fff;
+
+    border-color: rgba(210, 232, 197, 0.3);
+
+    background: rgba(255, 255, 255, 0.07);
+
+    box-shadow: none;
+
+    backdrop-filter: blur(10px);
+}
+
+.about-hero .call:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border-color: rgba(210, 232, 197, 0.65);
+}
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.about-hero-benefits {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px 19px;
+
+    margin-top: 27px;
+}
+
+.about-hero-benefits>div {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #c9d9cf;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.about-hero-benefits>div>span {
+    width: 20px;
+    height: 20px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--accent);
+
+    background: rgba(119, 195, 71, 0.12);
+
+    border: 1px solid rgba(140, 210, 95, 0.2);
+}
+
+/* =====================================================
+   MINI CARDS
+===================================================== */
+
+.about-hero-mini-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+
+    max-width: 520px;
+
+    margin-top: 33px;
+}
+
+.about-mini-card {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 12px;
+
+    border-radius: 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.025));
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.about-mini-card>svg {
+    width: 42px;
+    height: 42px;
+
+    padding: 10px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    color: var(--accent);
+
+    background: rgba(118, 190, 72, 0.11);
+}
+
+.about-mini-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(135, 207, 91, 0.27);
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.about-mini-card small {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #93ad9d;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+.about-mini-card strong {
+    display: block;
+
+    color: #f5faf6;
+
+    font-size: 12px;
+}
+
+/* =====================================================
+   IMAGE SIDE
+===================================================== */
+
+.about-hero-visual {
+    position: relative;
+
+    padding:
+        25px 25px 35px 0;
+}
+
+.about-hero-image-wrap {
+    position: relative;
+
+    height: 575px;
+
+    overflow: hidden;
+
+    border-radius:
+        38px 38px 110px 38px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.13);
+
+    background: #154937;
+
+    box-shadow:
+        0 35px 75px rgba(0, 0, 0, 0.26);
+}
+
+.about-hero-image-wrap::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 13px;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    border-radius:
+        28px 28px 95px 28px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.16);
+}
+
+.about-hero-image-wrap img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-hero-image-wrap:hover img {
+    transform: scale(1.045);
+}
+
+.about-hero-image-shade {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(180deg,
+            transparent 52%,
+            rgba(3, 31, 22, 0.85));
+}
+
+/* image caption */
+
+.about-image-bottom {
+    position: absolute;
+
+    z-index: 4;
+
+    left: 26px;
+    right: 35px;
+    bottom: 27px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.about-image-bottom-icon {
+    width: 48px;
+    height: 48px;
+
+    flex: 0 0 48px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    color: #123b29;
+
+    background: var(--accent);
+}
+
+.about-image-bottom small {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #aecaaf;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+}
+
+.about-image-bottom strong {
+    display: block;
+
+    max-width: 330px;
+
+    color: #fff;
+
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* =====================================================
+   FLOATING PROTECTION CARD
+===================================================== */
+
+.about-protection-card {
+    position: absolute;
+
+    z-index: 10;
+
+    left: -50px;
+    top: 75px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 260px;
+
+    padding: 11px 15px 11px 10px;
+
+    border-radius: 15px;
+
+    color: #143a2a;
+
+    background:
+        rgba(255, 255, 255, 0.96);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.85);
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.2);
+
+    backdrop-filter: blur(14px);
+}
+
+.about-protection-icon {
+    position: relative;
+
+    width: 52px;
+    height: 52px;
+
+    flex: 0 0 52px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+
+    color: #fff;
+
+    background:
+        linear-gradient(145deg,
+            #0e5139,
+            #27774e);
+}
+
+.about-protection-icon span {
+    position: absolute;
+
+    right: -5px;
+    bottom: -5px;
+
+    width: 22px;
+    height: 22px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: #163c29;
+
+    background: var(--accent);
+
+    border: 2px solid #fff;
+}
+
+.about-protection-card small {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #718078;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+.about-protection-card strong {
+    display: block;
+
+    max-width: 160px;
+
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+/* =====================================================
+   CIRCLE BADGE
+===================================================== */
+
+.about-hero-circle {
+    position: absolute;
+
+    z-index: 6;
+
+    right: -8px;
+    bottom: 3px;
+
+    width: 105px;
+    height: 105px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #143a29;
+
+    background: var(--accent);
+
+    border: 7px solid #0a3b2c;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.2);
+
+    transform: rotate(7deg);
+}
+
+.about-hero-circle span {
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+}
+
+.about-hero-circle strong {
+    margin: 1px 0;
+
+    font-size: 21px;
+
+    letter-spacing: -0.04em;
+}
+
+/* =====================================================
+   WATERMARK
+===================================================== */
+
+.about-hero-watermark {
+    position: absolute;
+
+    z-index: -1;
+
+    left: -15px;
+    bottom: -30px;
+
+    color:
+        rgba(255, 255, 255, 0.025);
+
+    font-size: clamp(100px,
+            13vw,
+            210px);
+
+    font-weight: 900;
+
+    line-height: 0.8;
+
+    letter-spacing: -0.08em;
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
+
+.about-hero-bottom-line {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(90deg,
+            var(--accent),
+            #347a44 45%,
+            transparent 90%);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+    .about-hero-container {
+        grid-template-columns:
+            0.9fr 1.1fr;
+
+        gap: 40px;
+    }
+
+    .about-hero h1 {
+        font-size: 54px;
+    }
+
+    .about-hero-image-wrap {
+        height: 520px;
+    }
+
+    .about-protection-card {
+        left: -30px;
+
+        transform: scale(0.9);
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 760px) {
+    .about-hero {
+        min-height: auto;
+    }
+
+    .about-hero-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding-top: 60px;
+        padding-bottom: 65px;
+    }
+
+    .about-hero-content {
+        max-width: none;
+    }
+
+    .about-hero h1 {
+        font-size:
+            clamp(45px,
+                12vw,
+                60px);
+
+        line-height: 1.01;
+    }
+
+    .about-hero-description {
+        font-size: 16px;
+    }
+
+    .about-hero-actions {
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .about-hero-actions .button {
+        width: 100%;
+    }
+
+    .about-hero-mini-cards {
+        max-width: none;
+    }
+
+    .about-hero-visual {
+        padding: 0 0 20px;
+    }
+
+    .about-hero-image-wrap {
+        height: 470px;
+
+        border-radius:
+            25px 25px 70px 25px;
+    }
+
+    .about-protection-card {
+        left: 15px;
+        top: 20px;
+
+        min-width: 230px;
+
+        transform: scale(0.9);
+        transform-origin: top left;
+    }
+
+    .about-hero-circle {
+        right: -3px;
+    }
+
+    .about-hero-watermark {
+        display: none;
+    }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+    .about-hero-container {
+        padding-top: 48px;
+    }
+
+    .about-hero h1 {
+        font-size: 44px;
+    }
+
+    .about-hero-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero-mini-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero-benefits {
+        display: grid;
+
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero-image-wrap {
+        height: 410px;
+    }
+
+    .about-image-bottom {
+        left: 18px;
+        right: 18px;
+        bottom: 20px;
+    }
+
+    .about-hero-circle {
+        width: 88px;
+        height: 88px;
+    }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-hero *,
+    .about-hero *::before,
+    .about-hero *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

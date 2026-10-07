@@ -1,0 +1,65 @@
+.why {
+  background: var(--primary-dark);
+  color: white;
+  text-align: left;
+}
+.why > .container > .eyebrow {
+  color: #badb9d;
+}
+.why h2 {
+  max-width: 760px;
+}
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 48px;
+}
+.benefit-grid article {
+  padding: 32px 27px;
+  border: 1px solid #668b634d;
+  border-radius: 9px;
+  background: #123c2d;
+  transition:
+    transform 0.25s,
+    border-color 0.25s;
+}
+.benefit-grid article:hover {
+  transform: translateY(-4px);
+  border-color: #a4cf7b;
+}
+.benefit-grid svg {
+  margin-bottom: 30px;
+  color: var(--accent);
+  width: 37px;
+  height: 37px;
+}
+.benefit-grid h3 {
+  font-size: 22px;
+}
+.benefit-grid p {
+  font-size: 16px;
+  margin: 0;
+  color: #d2ddcc;
+}
+@media (max-width: 1100px) {
+  .benefit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .benefit-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 34px;
+  }
+  .benefit-grid article {
+    padding: 28px;
+  }
+  .benefit-grid svg {
+    margin-bottom: 22px;
+  }
+  .benefit-grid h3 {
+    font-size: 24px;
+  }
+}

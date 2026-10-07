@@ -1,0 +1,57 @@
+.local-help {
+  background: var(--background);
+}
+.local-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  min-height: 520px;
+  box-shadow: var(--shadow-card);
+}
+.local-image img {
+  height: 520px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 24% center;
+}
+.image-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--primary);
+  color: #e1edda;
+  padding: 22px 28px;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  border-top: 3px solid var(--accent);
+}
+.check-list {
+  padding: 0;
+  margin: 30px 0 36px;
+  list-style: none;
+}
+.check-list li {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin: 18px 0;
+  font-size: 16px;
+}
+.check-list svg {
+  color: #5c873a;
+}
+@media (max-width: 700px) {
+  .local-image,
+  .local-image img {
+    height: 360px;
+    min-height: 0;
+  }
+  .image-label {
+    font-size: 9px;
+    padding: 18px;
+  }
+  .check-list li {
+    align-items: flex-start;
+  }
+}

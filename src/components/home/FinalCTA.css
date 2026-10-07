@@ -1,0 +1,59 @@
+.cta-band {
+  padding: 78px 0;
+  background: linear-gradient(110deg, #174530, #082e22);
+  color: white;
+  border-top: 1px solid #547144;
+}
+.cta-band > .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+.cta-band h2 {
+  max-width: 780px;
+  font-size: clamp(32px, 3vw, 44px);
+}
+.cta-band p {
+  color: #d1e0c9;
+  margin: 0;
+  font-size: 17px;
+}
+.cta-band .eyebrow {
+  color: #b9dba0;
+}
+.cta-band .button-row {
+  flex-shrink: 0;
+  flex-direction: column;
+  min-width: 240px;
+}
+.cta-band .call {
+  color: white;
+  background: transparent;
+  border-color: #aac19675;
+  box-shadow: none;
+}
+.cta-band .call:hover {
+  background: #ffffff0c;
+  border-color: #c5dea7;
+}
+@media (max-width: 800px) {
+  .cta-band {
+    padding: 55px 0;
+  }
+  .cta-band > .container {
+    display: block;
+  }
+  .cta-band .button-row {
+    margin-top: 30px;
+    flex-direction: row;
+  }
+  .cta-band .button {
+    min-width: 200px;
+  }
+}
+@media (max-width: 600px) {
+  .cta-band .button {
+    width: 100%;
+  }
+}

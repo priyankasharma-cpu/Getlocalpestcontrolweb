@@ -1,0 +1,860 @@
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: relative;
+  min-height: 720px;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+  background: #062a20;
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: 34% center;
+
+  will-change: transform;
+}
+
+/* Main dark gradient */
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -4;
+
+  background:
+    linear-gradient(90deg,
+      rgba(5, 35, 27, 0.05) 0%,
+      rgba(5, 35, 27, 0.1) 25%,
+      rgba(5, 35, 27, 0.72) 50%,
+      rgba(5, 35, 27, 0.96) 72%,
+      #05271f 100%);
+}
+
+/* Premium green glow */
+
+.hero-glow {
+  position: absolute;
+  z-index: -3;
+
+  width: 620px;
+  height: 620px;
+
+  right: -150px;
+  top: -190px;
+
+  border-radius: 50%;
+
+  background: rgba(94, 190, 42, 0.13);
+  filter: blur(90px);
+
+  pointer-events: none;
+}
+
+/* Subtle texture */
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  opacity: 0.09;
+
+  background-image:
+    radial-gradient(circle at center,
+      rgba(255, 255, 255, 0.35) 1px,
+      transparent 1px);
+
+  background-size: 28px 28px;
+
+  mask-image: linear-gradient(90deg,
+      transparent 20%,
+      #000 70%);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.hero-content {
+  position: relative;
+
+  min-height: 720px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding-top: 72px;
+  padding-bottom: 110px;
+}
+
+.hero-copy {
+  width: 50%;
+  max-width: 680px;
+}
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 20px;
+
+  padding: 7px 13px 7px 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: #e1efd8;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+.eyebrow-icon {
+  width: 28px;
+  height: 28px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #173a28;
+  background: var(--accent);
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.hero-content h1 {
+  margin: 0;
+
+  max-width: 680px;
+
+  font-size: clamp(52px, 4.6vw, 76px);
+  line-height: 0.99;
+
+  letter-spacing: -0.052em;
+
+  font-weight: 750;
+
+  text-wrap: balance;
+}
+
+.hero-content h1 em {
+  position: relative;
+
+  display: inline-block;
+
+  font-style: normal;
+  color: var(--accent);
+}
+
+.hero-content h1 em::after {
+  content: "";
+
+  position: absolute;
+
+  left: 3px;
+  right: 2px;
+  bottom: -7px;
+
+  height: 3px;
+
+  border-radius: 50px;
+
+  background: linear-gradient(90deg,
+      var(--accent),
+      rgba(255, 255, 255, 0));
+
+  transform-origin: left;
+  animation: heroLine 1s 0.7s both;
+}
+
+@keyframes heroLine {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  max-width: 570px;
+
+  margin: 31px 0 32px;
+
+  color: #dce9df;
+
+  font-size: 18px;
+  line-height: 1.72;
+
+  letter-spacing: -0.01em;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero .button-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 13px;
+}
+
+.hero .button {
+  min-height: 58px;
+
+  border-radius: 10px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+/* Quote button */
+
+.hero-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  padding-left: 24px !important;
+  padding-right: 9px !important;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 30px rgba(72, 176, 34, 0.24),
+    inset 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.hero-primary-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 17px 38px rgba(72, 176, 34, 0.32),
+    inset 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.button-arrow {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  background: rgba(0, 0, 0, 0.13);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.hero-primary-btn:hover .button-arrow {
+  transform: rotate(45deg);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Call button */
+
+.hero .call {
+  min-height: 58px;
+
+  color: #fff;
+
+  border: 1px solid rgba(204, 229, 187, 0.36);
+
+  background: rgba(255, 255, 255, 0.065);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: none;
+}
+
+.hero .call:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border-color: rgba(211, 230, 194, 0.75);
+}
+
+/* =========================================
+   CHECKS
+========================================= */
+
+.hero-checks {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px 22px;
+
+  margin-top: 28px;
+
+  color: #dce9d7;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero-checks>span {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.check-icon {
+  width: 21px;
+  height: 21px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: var(--accent);
+
+  background: rgba(118, 196, 72, 0.12);
+
+  border: 1px solid rgba(149, 215, 106, 0.2);
+}
+
+/* =========================================
+   TRUST CARDS
+========================================= */
+
+.hero-trust-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-top: 35px;
+}
+
+.hero-trust-card {
+  min-height: 83px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 13px 14px;
+
+  border-radius: 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.035));
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hero-trust-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(145, 211, 101, 0.32);
+
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.13),
+      rgba(255, 255, 255, 0.055));
+}
+
+/* BIG SVG ICONS */
+
+.hero-trust-icon {
+  width: 48px;
+  height: 48px;
+
+  flex: 0 0 48px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  color: var(--accent);
+
+  background:
+    linear-gradient(145deg,
+      rgba(125, 203, 73, 0.2),
+      rgba(125, 203, 73, 0.07));
+
+  border: 1px solid rgba(145, 215, 98, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.hero-trust-card:hover .hero-trust-icon {
+  transform: rotate(-5deg) scale(1.08);
+
+  background: rgba(125, 203, 73, 0.2);
+}
+
+.hero-trust-card strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #fff;
+
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.hero-trust-card small {
+  display: block;
+
+  color: #bcd0c1;
+
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+/* =========================================
+   FLOATING HOME PROTECTION CARD
+========================================= */
+
+.hero-floating-badge {
+  position: absolute;
+
+  left: clamp(25px, 4vw, 72px);
+  bottom: 74px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 11px 16px 11px 11px;
+
+  border-radius: 13px;
+
+  color: #123629;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.18);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.floating-icon {
+  position: relative;
+
+  width: 51px;
+  height: 51px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: #fff;
+
+  background: #0a4735;
+}
+
+.floating-shield {
+  position: absolute;
+
+  right: -5px;
+  bottom: -5px;
+
+  width: 23px;
+  height: 23px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #183e2c;
+
+  background: var(--accent);
+
+  border: 2px solid #fff;
+}
+
+.hero-floating-badge small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #688074;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+}
+
+.hero-floating-badge strong {
+  display: block;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.hero-caption {
+  position: absolute;
+
+  right: 38px;
+  bottom: 26px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.17em;
+}
+
+.hero-caption span {
+  width: 25px;
+  height: 1px;
+
+  background: var(--accent);
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1700px) {
+
+  .hero,
+  .hero-content {
+    min-height: 790px;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+  }
+
+  .hero-image {
+    object-position: center;
+  }
+
+  .hero-content h1 {
+    font-size: 78px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) and (min-width: 701px) {
+
+  .hero,
+  .hero-content {
+    min-height: 680px;
+  }
+
+  .hero-copy {
+    width: 57%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(47px, 5vw, 58px);
+  }
+
+  .hero-description {
+    font-size: 17px;
+  }
+
+  .hero-trust-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-trust-card {
+    padding: 11px;
+  }
+
+  .hero-trust-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-basis: 42px;
+  }
+
+  .hero-floating-badge {
+    display: none;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(90deg,
+        rgba(5, 35, 27, 0.03),
+        rgba(5, 35, 27, 0.45) 35%,
+        rgba(5, 35, 27, 0.93) 58%,
+        #05271f 100%);
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+
+    background:
+      linear-gradient(150deg,
+        #052d22,
+        #0b4936);
+  }
+
+  .hero-image {
+    position: relative;
+
+    order: 2;
+
+    width: 100%;
+    height: 330px;
+
+    object-position: 28% center;
+  }
+
+  .hero-shade,
+  .hero-glow,
+  .hero-pattern {
+    display: none;
+  }
+
+  .hero-content {
+    order: 1;
+
+    min-height: 0;
+
+    padding: 48px 0 42px;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 18px;
+  }
+
+  .hero-content h1 {
+    max-width: 560px;
+
+    font-size: clamp(40px, 10.5vw, 56px);
+    line-height: 1.04;
+  }
+
+  .hero-content h1 br {
+    display: none;
+  }
+
+  .hero-description {
+    max-width: 520px;
+
+    margin: 26px 0 27px;
+
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .hero .button-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .hero .button {
+    width: 100%;
+    min-width: 0;
+
+    font-size: 14px;
+  }
+
+  .hero-primary-btn {
+    padding-left: 17px !important;
+  }
+
+  .button-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-checks {
+    gap: 11px 15px;
+
+    margin-top: 25px;
+  }
+
+  .hero-trust-grid {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    margin-top: 30px;
+  }
+
+  .hero-trust-card {
+    min-height: 72px;
+  }
+
+  .hero-trust-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-basis: 45px;
+  }
+
+  .hero-floating-badge {
+    left: 18px;
+    bottom: 22px;
+
+    z-index: 5;
+
+    padding: 9px 13px 9px 9px;
+  }
+
+  .floating-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero-caption {
+    display: none;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+  .hero-content {
+    padding-top: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 41px;
+  }
+
+  .hero .button-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-checks {
+    display: grid;
+
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    height: 285px;
+  }
+
+  .hero-floating-badge {
+    transform: scale(0.9);
+    transform-origin: bottom left;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero *,
+  .hero *::before,
+  .hero *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

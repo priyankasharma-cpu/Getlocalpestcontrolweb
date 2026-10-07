@@ -1,0 +1,53 @@
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.lead-form label {
+  font-size: 15px;
+  font-weight: 600;
+  display: block;
+}
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #cbd5c8;
+  background: #fff;
+  border-radius: 5px;
+  padding: 13px;
+  margin-top: 7px;
+  color: var(--text);
+  font-size: 16px;
+}
+.lead-form [aria-invalid="true"] {
+  border-color: #b54431;
+}
+.error {
+  font-size: 14px;
+  color: #a73024;
+  display: block;
+  margin-top: 5px;
+}
+.form-note {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 18px 0;
+  color: #687367;
+}
+.form-note a {
+  text-decoration: underline;
+}
+.confirmation {
+  padding: 35px 0;
+  text-align: center;
+}
+.confirmation svg {
+  color: #659b38;
+  margin-bottom: 20px;
+}
+.confirmation p {
+  font-size: 15px;
+}
