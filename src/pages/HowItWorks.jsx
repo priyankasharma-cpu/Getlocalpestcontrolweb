@@ -27,16 +27,6 @@ export default function HowItWorks({ onQuote }) {
           "Help reduce future pest activity",
         ]}
       />
-      <InfoSection
-        title="Make the most of your assessment."
-        copy="Ask about preparation, treatment details, and follow-up. Availability and scheduling are confirmed by the provider."
-        items={[
-          "Note where activity occurs",
-          "Share photographs when possible",
-          "Ask about the next steps",
-        ]}
-      />
-      <FAQ />
       <FinalCTA onQuote={onQuote} />
     </>
   );

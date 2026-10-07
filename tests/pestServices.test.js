@@ -5,7 +5,7 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
 // Vite loads the existing asset glob for these Node tests; no test framework is installed.
-let vite, catalog, resolver, validatePestServices, PestHero;
+let vite, catalog, resolver, validatePestServices, PestHero, CallCTA, CONTACT_PHONE;
 const extensions = ["webp", "png", "jpg", "jpeg", "svg"];
 
 before(async () => {
@@ -18,6 +18,10 @@ before(async () => {
   ({ default: PestHero } = await vite.ssrLoadModule(
     "/src/components/pest-control/PestHero.jsx",
   ));
+  ({ default: CallCTA } = await vite.ssrLoadModule(
+    "/src/components/common/CallCTA.jsx",
+  ));
+  ({ CONTACT_PHONE } = await vite.ssrLoadModule("/src/utils/constants.js"));
   ({ validatePestServices } = await vite.ssrLoadModule(
     "/src/utils/validatePestServices.js",
   ));
@@ -362,4 +366,17 @@ test("service detail heroes render the selected pest image for every service", (
   }
   const html = renderToStaticMarkup(createElement(PestHero));
   assert.ok(html.includes("PestControlServices.png"));
+});
+
+test("every call variant exposes the official TFN as a visible accessible telephone link", () => {
+  assert.equal(CONTACT_PHONE.href, `tel:${CONTACT_PHONE.raw}`);
+  assert.equal(CONTACT_PHONE.display.replace(/[^+\d]/g, ""), CONTACT_PHONE.raw);
+  for (const variant of ["default", "header", "menu", "card", "footer", "sticky"]) {
+    const html = renderToStaticMarkup(createElement(CallCTA, { variant }));
+    assert.ok(html.includes('href="tel:+18882401827"'), variant);
+    assert.ok(html.includes("<strong>+1 (888) 240-1827</strong>"), variant);
+    assert.ok(html.includes('aria-label="Call Get Local Pest Control at +1 (888) 240-1827"'), variant);
+    assert.ok(html.includes('aria-hidden="true"'), variant);
+    assert.ok(!html.includes("aria-disabled"), variant);
+  }
 });

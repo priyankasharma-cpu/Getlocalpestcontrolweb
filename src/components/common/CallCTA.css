@@ -1,42 +1,707 @@
-.button.call {
-  background: var(--accent);
-  color: var(--primary-dark);
-  border: 1px solid var(--accent);
-  box-shadow: 0 3px 8px #0c312512;
-  opacity: 1;
+/* =====================================================
+   CALL CTA
+===================================================== */
+
+.button.call.call-cta {
+  position: relative;
+  isolation: isolate;
+
+  display: inline-flex;
+  align-items: center;
+
   gap: 10px;
+
+  min-height: 58px;
+  max-width: 100%;
+
+  padding: 7px 9px;
+
+  overflow: hidden;
+
+  border: 1px solid #9bd768;
+  border-radius: 12px;
+
+  color: #123b29;
+
+  background:
+    linear-gradient(135deg,
+      #c7ed8c 0%,
+      var(--accent) 52%,
+      #9ed565 100%);
+
+  box-shadow:
+    0 5px 14px rgba(22, 72, 43, 0.1),
+    0 12px 25px rgba(65, 125, 54, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
-.button.call:hover {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
-  box-shadow: 0 7px 18px #0c312522;
+
+/* subtle glass highlight */
+
+.button.call.call-cta::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(115deg,
+      rgba(255, 255, 255, 0.22),
+      transparent 30%,
+      transparent 70%,
+      rgba(255, 255, 255, 0.08));
+}
+
+/* =====================================================
+   PHONE AREA
+===================================================== */
+
+.call-cta__icon-wrap {
+  position: relative;
+  z-index: 2;
+
+  width: 43px;
+  height: 43px;
+
+  flex: 0 0 43px;
+
+  display: grid;
+  place-items: center;
+}
+
+.call-cta__icon {
+  position: relative;
+  z-index: 3;
+
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: #efffe7;
+
+  background:
+    linear-gradient(145deg,
+      #103f2b,
+      #1c6540);
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  box-shadow:
+    0 6px 14px rgba(10, 59, 34, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Ringing phone */
+
+.call-cta__icon svg {
+  position: relative;
+  z-index: 2;
+
+  animation:
+    incomingCall 3s ease-in-out infinite;
+
+  transform-origin: center;
+}
+
+/* =====================================================
+   STATUS DOT
+===================================================== */
+
+.call-cta__status {
+  position: absolute;
+
+  right: -3px;
+  top: -3px;
+
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+
+  background: #cafa8c;
+
+  border: 2px solid #19553a;
+
+  box-shadow:
+    0 0 0 2px rgba(199, 244, 139, 0.16);
+}
+
+.call-cta__status::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -4px;
+
+  border-radius: inherit;
+
+  border: 1px solid rgba(61, 115, 67, 0.45);
+
+  animation:
+    statusPulse 1.8s ease-out infinite;
+}
+
+/* =====================================================
+   RING PULSES
+===================================================== */
+
+.call-cta__ring {
+  position: absolute;
+  z-index: 1;
+
+  inset: 5px;
+
+  border-radius: 12px;
+
+  border:
+    1px solid rgba(18, 68, 42, 0.4);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  animation:
+    callPulse 3s ease-out infinite;
+}
+
+.call-cta__ring--two {
+  animation-delay: 0.75s;
+}
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.call-cta__content {
+  position: relative;
+  z-index: 2;
+
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 1px;
+
+  text-align: left;
+}
+
+.call-cta__content small {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  color: rgba(17, 58, 39, 0.7);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.call-cta__content strong {
+  color: #103a27;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.01em;
+
+  white-space: nowrap;
+
+  font-variant-numeric: tabular-nums;
+}
+
+/* =====================================================
+   LIVE DOT
+===================================================== */
+
+.call-cta__live-dot {
+  position: relative;
+
+  width: 5px;
+  height: 5px;
+
+  flex: 0 0 5px;
+
+  border-radius: 50%;
+
+  background: #185d39;
+
+  font-style: normal;
+}
+
+.call-cta__live-dot::after {
+  content: "";
+
+  position: absolute;
+  inset: -3px;
+
+  border-radius: inherit;
+
+  border:
+    1px solid rgba(24, 93, 57, 0.4);
+
+  animation:
+    livePulse 1.8s ease-out infinite;
+}
+
+/* =====================================================
+   ARROW
+===================================================== */
+
+.call-cta__arrow {
+  position: relative;
+  z-index: 2;
+
+  width: 29px;
+  height: 29px;
+
+  flex: 0 0 29px;
+
+  display: grid;
+  place-items: center;
+
+  margin-left: 2px;
+
+  border-radius: 8px;
+
+  color: #174b30;
+
+  background: rgba(255, 255, 255, 0.23);
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.button.call.call-cta:hover {
+  color: #123b29;
+
+  border-color: #aee277;
+
+  background:
+    linear-gradient(135deg,
+      #d0f39b,
+      var(--accent-hover));
+
   transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(21, 69, 42, 0.13),
+    0 15px 30px rgba(64, 125, 51, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
-.call svg {
-  transition: transform 0.22s ease;
+
+.call-cta:hover .call-cta__icon {
+  transform:
+    scale(1.05) rotate(-2deg);
+
+  box-shadow:
+    0 8px 18px rgba(10, 59, 34, 0.25);
 }
-.call:hover svg {
-  transform: rotate(-10deg);
+
+.call-cta:hover .call-cta__arrow {
+  transform:
+    translate(2px, -2px) rotate(5deg);
+
+  background: rgba(255, 255, 255, 0.34);
 }
-.call[aria-disabled="true"] {
-  cursor: default;
+
+/* =====================================================
+   HEADER VARIANT
+   IMPORTANT: compact so navbar doesn't break
+===================================================== */
+
+.button.call-cta--header {
+  min-height: 54px;
+
+  padding: 6px 8px;
+
+  gap: 7px;
+
+  border-radius: 10px;
+
+  flex-shrink: 0;
 }
-.call.compact {
-  width: 44px;
-  min-height: 44px;
-  padding: 10px;
+
+.call-cta--header .call-cta__icon-wrap {
+  width: 36px;
+  height: 36px;
+
+  flex-basis: 36px;
 }
-.call.compact .call-label {
+
+.call-cta--header .call-cta__icon {
+  width: 33px;
+  height: 33px;
+
+  border-radius: 9px;
+}
+
+.call-cta--header .call-cta__icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.call-cta--header .call-cta__content small {
+  font-size: 8px;
+}
+
+.call-cta--header .call-cta__content strong {
+  font-size: 13px;
+}
+
+.call-cta--header .call-cta__arrow {
+  width: 25px;
+  height: 25px;
+
+  flex-basis: 25px;
+}
+
+/* =====================================================
+   CARD VARIANT
+===================================================== */
+
+.button.call-cta--card {
+  width: 100%;
+
+  min-height: 50px;
+
+  padding: 6px 8px;
+
+  gap: 7px;
+}
+
+.call-cta--card .call-cta__icon-wrap {
+  width: 34px;
+  height: 34px;
+
+  flex-basis: 34px;
+}
+
+.call-cta--card .call-cta__icon {
+  width: 31px;
+  height: 31px;
+
+  border-radius: 8px;
+}
+
+.call-cta--card .call-cta__content strong {
+  font-size: 12px;
+}
+
+.call-cta--card .call-cta__arrow {
+  width: 24px;
+  height: 24px;
+
+  flex-basis: 24px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer-grid .call-cta--footer {
+  display: inline-flex;
+
+  margin-top: 24px;
+
+  color: #123b29;
+
+  text-decoration: none;
+}
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.navigation .mobile-menu-call {
   display: none;
 }
-.call-status {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin: 12px 0 0;
+
+@media (max-width: 1250px) {
+  .navigation.open .mobile-menu-call {
+    display: flex;
+
+    width: 100%;
+
+    margin-top: 16px;
+
+    min-height: 56px;
+
+    flex-shrink: 0;
+  }
 }
+
+/* =====================================================
+   MEDIUM DESKTOP / HEADER
+===================================================== */
+
+@media (max-width: 1390px) and (min-width: 1251px) {
+  .header-actions .call-cta {
+    min-height: 50px;
+
+    padding: 5px 7px;
+
+    gap: 6px;
+  }
+
+  .header-actions .call-cta__icon-wrap {
+    width: 31px;
+    height: 31px;
+
+    flex-basis: 31px;
+  }
+
+  .header-actions .call-cta__icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .header-actions .call-cta__content strong {
+    font-size: 12px;
+  }
+
+  /* Save header width */
+  .header-actions .call-cta__arrow {
+    display: none;
+  }
+
+  .header .navigation {
+    gap: 12px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+  .header .header-main {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr) 44px;
+
+    min-height: 76px;
+
+    padding-top: 10px;
+    padding-bottom: 12px;
+
+    gap: 8px 12px;
+  }
+
+  .header .logo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .header .menu-toggle {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .header .header-actions {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    margin-left: 0;
+  }
+
+  .header .header-actions .call-cta {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 6px 10px;
+  }
+
+  .mobile-cta>.button.call-cta--sticky {
+    width: auto;
+
+    flex: 1.2;
+
+    min-height: 48px;
+
+    padding: 6px;
+
+    gap: 5px;
+  }
+
+  .mobile-cta>.button.primary {
+    width: auto;
+    flex: 1;
+  }
+
+  .call-cta--sticky .call-cta__icon-wrap {
+    width: 28px;
+    height: 28px;
+
+    flex-basis: 28px;
+  }
+
+  .call-cta--sticky .call-cta__icon {
+    width: 26px;
+    height: 26px;
+
+    border-radius: 7px;
+  }
+
+  .call-cta--sticky .call-cta__icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .call-cta--sticky .call-cta__content strong {
+    font-size: 11px;
+  }
+
+  .call-cta--sticky .call-cta__content small {
+    font-size: 7px;
+  }
+
+  .call-cta--sticky .call-cta__arrow {
+    display: none;
+  }
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes incomingCall {
+
+  0%,
+  68%,
+  100% {
+    transform: rotate(0);
+  }
+
+  72% {
+    transform: rotate(-10deg);
+  }
+
+  76% {
+    transform: rotate(10deg);
+  }
+
+  80% {
+    transform: rotate(-7deg);
+  }
+
+  84% {
+    transform: rotate(7deg);
+  }
+
+  88% {
+    transform: rotate(-4deg);
+  }
+
+  92% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes callPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.32;
+  }
+
+  60% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes statusPulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.7;
+  }
+
+  80%,
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+@keyframes livePulse {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.65;
+  }
+
+  80%,
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.call-cta:focus-visible {
+  outline: 3px solid rgba(159, 215, 104, 0.4);
+  outline-offset: 3px;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .button.call:hover,
-  .call:hover svg {
+
+  .call-cta__icon svg,
+  .call-cta__ring,
+  .call-cta__status::after,
+  .call-cta__live-dot::after {
+    animation: none !important;
+  }
+
+  .button.call.call-cta:hover,
+  .call-cta:hover .call-cta__icon,
+  .call-cta:hover .call-cta__arrow {
     transform: none;
   }
 }

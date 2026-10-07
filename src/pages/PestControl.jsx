@@ -5,6 +5,8 @@ import HowItWorks from "../components/home/HowItWorks";
 import FAQ from "../components/home/FAQ";
 import FinalCTA from "../components/home/FinalCTA";
 import { useSEO } from "../utils/seo";
+import PestIdentification from "../components/pest-control/PestIdentification";
+
 export default function PestControl({ onQuote }) {
   useSEO(
     "Pest Control",
@@ -27,33 +29,10 @@ export default function PestControl({ onQuote }) {
         ]}
       />
       <PestServices title="Explore all pest-control services" />
-      <InfoSection
-        title="Signs worth paying attention to."
-        items={[
-          "Repeated pest sightings",
-          "Droppings, nests, or shed skins",
-          "Gnaw marks or changes to wood",
-        ]}
-      />
-      <HowItWorks />
-      <InfoSection
-        title="Why identification matters."
-        copy="Similar-looking pests can behave very differently. Knowing what is present helps guide treatment."
-        items={[
-          "Observe where activity occurs",
-          "Photograph signs without disturbing pests",
-          "Share your observations",
-        ]}
-      />
-      <InfoSection
-        title="Small habits can make a difference."
-        items={[
-          "Keep food in closed containers",
-          "Address standing water and leaks",
-          "Maintain screens and accessible entry gaps",
-        ]}
-      />
       <FAQ />
+      <PestIdentification />
+
+
       <FinalCTA onQuote={onQuote} />
     </>
   );

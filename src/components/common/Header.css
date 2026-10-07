@@ -248,7 +248,7 @@
   color: var(--primary);
   margin-left: auto;
 }
-@media (max-width: 1390px) and (min-width: 1201px) {
+@media (max-width: 1390px) and (min-width: 1251px) {
   .header-main {
     gap: 18px;
   }
@@ -265,7 +265,7 @@
     padding: 12px 13px;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .header-main {
     height: 84px;
   }

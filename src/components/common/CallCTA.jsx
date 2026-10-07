@@ -1,26 +1,44 @@
-import { Phone } from "lucide-react";
-import { PHONE_NUMBER, PHONE_DISPLAY, hasPhone } from "../../utils/constants";
+import { PhoneCall, ArrowUpRight } from "lucide-react";
+import { CONTACT_PHONE } from "../../utils/constants";
 import "./CallCTA.css";
-export default function CallCTA({ className = "" }) {
-  return hasPhone ? (
+
+export default function CallCTA({
+  className = "",
+  variant = "default",
+  label = "Call Now",
+}) {
+  return (
     <a
-      className={"button call " + className}
-      href={"tel:" + PHONE_NUMBER.replace(/[\s().-]/g, "")}
-      title={PHONE_DISPLAY || "Call Now"}
+      className={`button call call-cta call-cta--${variant} ${className}`}
+      href={CONTACT_PHONE.href}
+      aria-label={`Call Get Local Pest Control at ${CONTACT_PHONE.display}`}
+      title={`Call ${CONTACT_PHONE.display}`}
     >
-      <Phone size={17} />
-      <span className="call-label">Call Now</span>
+      {/* Animated phone */}
+      <span className="call-cta__icon-wrap" aria-hidden="true">
+        <span className="call-cta__ring call-cta__ring--one" />
+        <span className="call-cta__ring call-cta__ring--two" />
+
+        <span className="call-cta__icon">
+          <PhoneCall size={19} strokeWidth={2.25} />
+          <i className="call-cta__status" />
+        </span>
+      </span>
+
+      {/* Text */}
+      <span className="call-cta__content">
+        <small>
+          <i className="call-cta__live-dot" />
+          {label}
+        </small>
+
+        <strong>{CONTACT_PHONE.display}</strong>
+      </span>
+
+      {/* Only an icon — NOT another CTA */}
+      <span className="call-cta__arrow" aria-hidden="true">
+        <ArrowUpRight size={15} strokeWidth={2.3} />
+      </span>
     </a>
-  ) : (
-    <button
-      className={"button call " + className}
-      type="button"
-      aria-disabled="true"
-      aria-label="Call Now — phone number not yet available"
-      title="Phone number not yet available"
-    >
-      <Phone size={17} />
-      <span className="call-label">Call Now</span>
-    </button>
   );
 }

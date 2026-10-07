@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { pestServices } from "../../data/pestServices";
 import logo from "../../assets/logo/logo.png";
+import CallCTA from "./CallCTA";
 import "./Footer.css";
 export default function Footer() {
   return (
@@ -18,6 +19,7 @@ export default function Footer() {
             Helping homeowners take an informed next step with common pest
             problems.
           </small>
+          <CallCTA variant="footer" label="Call Us" />
         </div>
         {[
           ["Pest Control", pestServices.slice(0, 6)],

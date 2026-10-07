@@ -87,7 +87,7 @@ export default function PestServices({
                     Learn More
                     <ArrowRight size={18} />
                   </Link>
-                  <CallCTA className="card-call" />
+                  <CallCTA variant="card" className="card-call" />
                 </div>
               </div>
             </Reveal>

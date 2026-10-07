@@ -163,8 +163,8 @@ export default function Header({ onQuote }) {
               <Link
                 className={
                   location.pathname === path ||
-                  (path === "/pest-control" &&
-                    location.pathname.startsWith("/pest-control/"))
+                    (path === "/pest-control" &&
+                      location.pathname.startsWith("/pest-control/"))
                     ? "active"
                     : ""
                 }
@@ -176,9 +176,17 @@ export default function Header({ onQuote }) {
               {path === "/pest-control" && pestMenu}
             </div>
           ))}
+          {/* Only render this when mobile navigation is open */}
+          {mobile && (
+            <CallCTA
+              variant="menu"
+              className="mobile-menu-call"
+              label="Call Now"
+            />
+          )}
         </nav>
         <div className="header-actions">
-          <CallCTA />
+          <CallCTA variant="header" />
           <button className="button primary" onClick={onQuote}>
             Get a Free Quote
           </button>
